@@ -1,0 +1,28 @@
+@startuml
+
+actor Caller as Caller order 1
+participant Standard order 2
+actor Correspondent order 3
+
+Caller -> Standard: Insert money
+group delay 2min
+Caller -> Standard : Compose number
+activate Standard
+Standard -> Caller : End call
+deactivate Standard 
+end
+group Call
+Caller -> Standard : Calling
+Correspondent -> Standard : Available 
+activate Standard
+Correspondent ->> Standard : Is busy 
+Caller <-> Correspondent : Conversation 
+Standard ->> Caller : Consume balance
+Caller ->> Standard : Add money
+Caller ->> Standard : Hang up
+Correspondent ->> Standard : Hang up
+deactivate Standard
+end
+Standard ->> Caller : Return balance
+
+@enduml
