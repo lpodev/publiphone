@@ -1,0 +1,37 @@
+@startuml shopping
+skinparam classAttributeIconSize 0
+
+
+class Standard {
+    - delay: int
+    - phoneNumber: String 
+    - price: double
+    - balance: double
+    - duration: int
+    
+    + Standard()
+    + ConsumeBalance(): void
+    + startDelay(): void
+    + hangUp(): double
+}
+
+
+class Caller {
+    - standard: Standard
+    + Caller(Standard)
+    + addBalance(double)
+    + CancelCall(): void
+}
+
+class Correspondent {
+    - phoneNumber: String 
+
+    + Correspondent(Standard)
+    + pickUp(): void
+    + hangUp(): void
+}
+
+Caller *--  "_caller" Standard
+Correspondent *-- "_correspondent" Standard
+
+@enduml
