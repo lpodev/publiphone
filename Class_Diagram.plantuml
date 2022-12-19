@@ -19,7 +19,7 @@ class Standard {
 class Caller {
     - standard: Standard
     + Caller(Standard)
-    + addBalance(double)
+    + addBalance(double): void
     + cancelCall(): void
 }
 
