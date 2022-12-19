@@ -4,7 +4,7 @@ skinparam classAttributeIconSize 0
 
 class Standard {
     - delay: int
-    - correspondent: Correspondent 
+    + correspondent: Correspondent 
     - price: double
     - balance: double
     - duration: int
@@ -20,7 +20,7 @@ class Standard {
 }
 
 class Caller {
-    - standard: Standard
+    public standard: Standard
 
     + Caller()
     + cancelCall(): void
