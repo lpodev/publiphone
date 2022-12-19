@@ -3,15 +3,19 @@
 class Caller
 {
 
-    private Standard $standard;
+    public Standard $standard;
 
-    public function __construct($standard)
+    public function __construct()
     {
-        $this->standard = $standard;
     }
 
     public function cancelCall(): void
     {
         // to complete
+    }
+
+    public function entryPhoneBooth(Standard $standard): void
+    {
+        $this->standard = $standard;
     }
 }

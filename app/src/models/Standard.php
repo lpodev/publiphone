@@ -4,18 +4,13 @@ class Standard
 {
     //Private Attributes
     private int $delay;
-    private string $phoneNumber;
+    public Correspondent $correspondent;
     private float $price;
     private float $balance;
     private int $duration;
 
-    public function __construct(int $delay, string $phoneNumber, float $price, float $balance, int $duration)
+    public function __construct()
     {
-        $this->delay = $delay;
-        $this->phoneNumber = $phoneNumber;
-        $this->price = $price;
-        $this->balance = $balance;
-        $this->duration = $duration;
     }
 
     public function ConsumeBalance(): float
@@ -25,7 +20,7 @@ class Standard
 
     public function startDelay(): void
     {
-        // to complete
+        $this->duration = microtime(true);
     }
 
     public function hangUp(): int
@@ -40,17 +35,18 @@ class Standard
 
     public function composeNumber(string $phoneNumber): void
     {
-        // to complete
+        $this->correspondent = new Correspondent($phoneNumber);
     }
 
     public function startCall(): void
     {
-        // to complete
+        $this->startDelay();
     }
 
     public function endCall(): void
     {
-        // to complete
+        $this->duration = microtime(true) - $this->duration;
+        unset($this->correspondent);
     }
 
 }
