@@ -10,12 +10,12 @@ class Correspondent
         $this->phoneNumber = $phoneNumber;
     }
 
-    public function pickUp()
+    public function pickUp(): void
     {
         // code
     }
 
-    public function hangUp()
+    public function hangUp(): void
     {
         // code
     }

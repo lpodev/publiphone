@@ -10,11 +10,11 @@ class Caller
         $this->standard = $standard;
     }
 
-    public function addBalance()
+    public function addBalance($balance): void
     {
     }
 
-    public function cancelCall()
+    public function cancelCall(): void
     {
     }
 }
