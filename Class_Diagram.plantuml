@@ -9,7 +9,7 @@ class Standard {
     - balance: double
     - duration: int
     
-    + Standard()
+    + Standard(int, String, double, double, int)
     + ConsumeBalance(): void
     + startDelay(): void
     + hangUp(): double
@@ -20,7 +20,7 @@ class Caller {
     - standard: Standard
     + Caller(Standard)
     + addBalance(double)
-    + CancelCall(): void
+    + cancelCall(): void
 }
 
 class Correspondent {
