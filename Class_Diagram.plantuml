@@ -4,7 +4,7 @@ skinparam classAttributeIconSize 0
 
 class Standard {
     - delay: int
-    - phoneNumber: String 
+    - correspondent: Correspondent 
     - price: double
     - balance: double
     - duration: int
