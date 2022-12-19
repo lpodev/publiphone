@@ -5,23 +5,29 @@ participant Standard order 2
 actor Correspondent order 3
 
 Caller -> Standard: Insert money
+activate Standard
 group delay 2min
 Caller -> Standard : Compose number
-activate Standard
+Standard -> Correspondent : Start Call 
+group times up 
 Standard -> Caller : End call
 deactivate Standard 
+end
 end
 group Call
 Caller -> Standard : Calling
 Correspondent -> Standard : Available 
 activate Standard
-Correspondent ->> Standard : Is busy 
 Caller <-> Correspondent : Conversation 
 Standard ->> Caller : Consume balance
 Caller ->> Standard : Add money
 Caller ->> Standard : Hang up
+deactivate Standard
 Correspondent ->> Standard : Hang up
 deactivate Standard
+group if busy
+Standard ->> Caller : End call
+end
 end
 Standard ->> Caller : Return balance
 
