@@ -20,12 +20,12 @@ class Standard
 
     public function startDelay(): void
     {
-        $this->duration = microtime(true);
+        $this->delay = microtime(true);
     }
 
-    public function hangUp(): int
+    public function hangUp(): void
     {
-        return $this->duration;
+        $this->endCall();
     }
 
     public function insertMoney(float $money): void
@@ -40,6 +40,7 @@ class Standard
 
     public function startCall(): void
     {
+        $this->duration = microtime(true);
         $this->startDelay();
     }
 
