@@ -18,6 +18,8 @@ class Standard
         $this->duration = $duration;
     }
 
+    //TOOD add money
+
     public function ConsumeBalance(): void
     {
         // to complete
