@@ -18,9 +18,9 @@ class Standard
         $this->duration = $duration;
     }
 
-    public function ConsumeBalance(): void
+    public function ConsumeBalance(): float
     {
-        // to complete
+        return $this->balance;
     }
 
     public function startDelay(): void
@@ -28,8 +28,29 @@ class Standard
         // to complete
     }
 
-    public function hangUp(): float
+    public function hangUp(): int
     {
         return $this->duration;
     }
+
+    public function insertMoney(float $money): void
+    {
+        $this->balance += $money;
+    }
+
+    public function composeNumber(string $phoneNumber): void
+    {
+        // to complete
+    }
+
+    public function startCall(): void
+    {
+        // to complete
+    }
+
+    public function endCall(): void
+    {
+        // to complete
+    }
+
 }

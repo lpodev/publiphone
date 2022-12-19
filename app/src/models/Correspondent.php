@@ -1,9 +1,9 @@
 <?php
 
-class Correspondent
+class Correspondent extends Caller
 {
 
-    private $phoneNumber;
+    private string $phoneNumber;
 
     public function __construct($phoneNumber)
     {
@@ -11,11 +11,6 @@ class Correspondent
     }
 
     public function pickUp(): void
-    {
-        // code
-    }
-
-    public function hangUp(): void
     {
         // code
     }
