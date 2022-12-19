@@ -9,18 +9,22 @@ class Standard {
     - balance: double
     - duration: int
     
-    + Standard(int, String, double, double, int)
-    + ConsumeBalance(): void
+    + Standard()
+    + consumeBalance(): double
     + startDelay(): void
-    + hangUp(): double
+    + hangUp(): int
+    + insertMoney(double): void
+    + composeNumber(string): void
+    + startCall(): void
+    + endCall(): void
 }
-
 
 class Caller {
     - standard: Standard
-    + Caller(Standard)
-    + addBalance(double): void
+
+    + Caller()
     + cancelCall(): void
+    + entryPubliPhone(Standard): void
 }
 
 class Correspondent {
@@ -28,10 +32,10 @@ class Correspondent {
 
     + Correspondent(Standard)
     + pickUp(): void
-    + hangUp(): void
 }
 
 Caller *--  "_caller" Standard
 Correspondent *-- "_correspondent" Standard
+Caller <|-- Correspondent
 
 @enduml

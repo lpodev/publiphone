@@ -1,9 +1,11 @@
 @startuml  phone_sequence
+autonumber 1
 
 actor Caller as Caller order 1
 participant Standard order 2
 actor Correspondent order 3
 
+Caller -> Standard: Entry phone booth
 Caller -> Standard: Insert money
 activate Standard
 group delay 2min
@@ -15,12 +17,10 @@ deactivate Standard
 end
 end
 group Call
-Caller -> Standard : Calling
 Correspondent -> Standard : Available 
 activate Standard
 Caller <-> Correspondent : Conversation 
 Standard ->> Caller : Consume balance
-Caller ->> Standard : Add money
 Caller ->> Standard : Hang up
 deactivate Standard
 Correspondent ->> Standard : Hang up
