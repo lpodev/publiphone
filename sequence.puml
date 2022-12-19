@@ -1,4 +1,4 @@
-@startuml
+@startuml  phone_sequence
 
 actor Caller as Caller order 1
 participant Standard order 2
